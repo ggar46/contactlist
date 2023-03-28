@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import ModalContent from './ModalContent.js';
+import ModalContent from './ModalContent.jsx';
 
-export default function PortalExample() {
+const PortalExample = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
       <button onClick={() => setShowModal(true)}>
-        Show modal using a portal
+        Contact Information
       </button>
       {showModal && createPortal(
         <ModalContent onClose={() => setShowModal(false)} />,
@@ -16,3 +16,5 @@ export default function PortalExample() {
     </>
   );
 }
+
+export default PortalExample

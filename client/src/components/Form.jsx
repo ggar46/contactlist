@@ -7,9 +7,9 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     const [student, setStudent] = useState(editingStudent || {
         firstname: "",
         lastname: "",
-        is_current: false,
         email: "",
-        phoneNumber: "",
+        phonenumber: "",
+        notes: ""
     });
 
     //create functions that handle the event of the user typing into the form
@@ -24,12 +24,6 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
         setStudent((student) => ({ ...student, lastname }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
-    };
-
 
     const handleEmail  = (event)  => {
         const email = event.target.value;
@@ -37,12 +31,17 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     }
 
     const handlePhone  = (event)  => {
-        const phoneNumber = event.target.value;
-        setStudent((student)  => ({...student, phoneNumber}));
+        const phonenumber = event.target.value;
+        setStudent((student)  => ({...student, phonenumber}));
     }
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setStudent({ firstname: "", lastname: "", email:"", phonenumber:"", notes:""  })
+    }
+
+    const handleNotes = (event) => {
+        const notes = event.target.value;
+        setStudent((student)  => ({...student, notes}));
     }
 
     
@@ -144,24 +143,26 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                     id="add-phone-number"
                     placeholder="Phone Number"
                     required
-                    value={student.phoneNumber}
+                    value={student.phonenumber}
                     onChange={handlePhone}
                 />
             </Form.Group>
 
 
-
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
             <Form.Group>
+                <Form.Label>Notes</Form.Label>
+                <input
+                    type="text"
+                    id="add-notes"
+                    placeholder="Notes"
+                    required
+                    value={student.notes}
+                    onChange={handleNotes}
+                />
+            </Form.Group>
             <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
             {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
-            </Form.Group>
+            
         </Form>
     );
 };

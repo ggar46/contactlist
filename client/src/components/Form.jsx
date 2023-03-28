@@ -7,7 +7,9 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     const [student, setStudent] = useState(editingStudent || {
         firstname: "",
         lastname: "",
-        is_current: false
+        is_current: false,
+        email: "",
+        phoneNumber: "",
     });
 
     //create functions that handle the event of the user typing into the form
@@ -28,9 +30,23 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
         setStudent((student) => ({ ...student, is_current }));
     };
 
+
+    const handleEmail  = (event)  => {
+        const email = event.target.value;
+        setStudent((student)  => ({...student, email}));
+    }
+
+    const handlePhone  = (event)  => {
+        const phoneNumber = event.target.value;
+        setStudent((student)  => ({...student, phoneNumber}));
+    }
+
     const clearForm = () => {
         setStudent({ firstname: "", lastname: "", is_current: false })
     }
+
+    
+
 
     //A function to handle the post request
     const postStudent = (newStudent) => {
@@ -92,6 +108,8 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                     onChange={handleNameChange}
                 />
             </Form.Group>
+
+
             <Form.Group>
                 <Form.Label>Last Name</Form.Label>
                 <input
@@ -103,6 +121,36 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                     onChange={handleLastnameChange}
                 />
             </Form.Group>
+
+
+            <Form.Group>
+                <Form.Label>Email</Form.Label>
+                <input
+                    type="text"
+                    id="add-email"
+                    placeholder="Email"
+                    required
+                    value={student.email}
+                    onChange={handleEmail}
+                />
+            </Form.Group>
+
+
+
+            <Form.Group>
+                <Form.Label>Phone Number</Form.Label>
+                <input
+                    type="text"
+                    id="add-phone-number"
+                    placeholder="Phone Number"
+                    required
+                    value={student.phoneNumber}
+                    onChange={handlePhone}
+                />
+            </Form.Group>
+
+
+
             <Form.Check
                 type={'checkbox'}
                 id={`isCurrent`}

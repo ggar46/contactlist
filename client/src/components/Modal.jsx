@@ -1,7 +1,7 @@
 const Modal = (props) => {
     return(
         <div>
-          {!props.show ? <p></p>: <p>here is where the contsact info should be passed down and pop up</p>}
+          {!props.show ? <p></p>: <h5>{props.children} </h5>}
         </div>
     )
 }

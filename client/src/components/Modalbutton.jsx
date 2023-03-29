@@ -9,8 +9,6 @@ const Modalbutton = () =>  {
 
     }
 
-
-
     return (
         <div>
             <button onClick={contactButtonHandler}>Contact Info</button>

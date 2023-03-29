@@ -2,7 +2,8 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavBar from './components/Navbar';
 import ListContacts from './components/ListContacts';
-import PortalExample from './components/PortalExample';
+import Modal from './components/Modal.jsx';
+
 
 
 
@@ -12,9 +13,7 @@ function App() {
     <div className="App">
       <MyNavBar />
       <ListContacts />
-      <div className="clipping-container">
-        <PortalExample />
-      </div>
+      <Modal />
     </div>
   )
 }

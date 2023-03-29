@@ -13,5 +13,4 @@ export default Modal;
 - if the props are received and they defined as false in the parent
 (by the true/false state) then render nothing, otherwise if true then show 
 the contact info.
-- 
 */

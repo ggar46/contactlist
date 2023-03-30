@@ -12,7 +12,7 @@ const Modalbutton = (props) =>  {
 
     return (
         <div>
-            <button onClick={contactButtonHandler}>Contact Info</button>
+            <button id = 'modalButton' onClick={contactButtonHandler}>Contact Info</button>
             <Modal show={show}> {props.children} </Modal>
         </div>
     )

@@ -72,3 +72,8 @@ button.btn.btn-primary {
   margin-right: 2em;
 }
 
+.modalInfo{
+ text-align: left; 
+ margin-left: 10%;
+ margin-top: 10%;
+}

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
+
 .App {
   min-height: 100vh;
   background-color: rgb(238, 232, 232);
@@ -23,6 +26,10 @@ a.navbar-brand {
   text-align: center;
   margin-top: 25px;
   flex: 1
+}
+
+.form-students{
+  margin-top: 80px;
 }
 
 ul {
@@ -74,10 +81,25 @@ button.btn.btn-primary {
 
 .modalInfo{
  text-align: left; 
- margin-left: 10%;
- margin-top: 10%;
+ margin-left: 30%;
+ margin-top: 5%;
 }
 
 #modalButton{
+  margin-top: 20px;
+}
+
+#titlePage {
+  font-family: 'Grandstander', cursive;
+  font-size: xx-large;
+  margin-bottom: 30px;
+}
+
+#cardTitle{
+  font-family: 'Grandstander', cursive;
+  font-size: x-large;
+}
+
+#submitButton{
   margin-top: 20px;
 }

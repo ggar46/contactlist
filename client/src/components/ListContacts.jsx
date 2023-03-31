@@ -62,7 +62,7 @@ const ListContacts = () => {
     return (
         <div className="mybody">
         <div className="list-students">
-            <h2>Techtonica Participants </h2>
+            <h2 id='titlePage'>Techtonica Participants </h2>
             <ul>
                 {students.map((student) => {
                     return <li key={student.id}> <Contact student={student} toDelete={onDelete} toUpdate={onUpdate} /></li>

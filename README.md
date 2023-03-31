@@ -1,4 +1,4 @@
-# Your First Express and React App with Vite
+<!-- # Your First Express and React App with Vite
  ⚡ Create a working full stack app with React and Express in minutes by running your client using Vite, your server using Express, and dumping your db in the template ⚡
 
 ## Step by Step instructions - To use this project as your start point  🚀  
@@ -64,4 +64,4 @@ For this template, the name of your db should be `techtonica`.
 * The instructions for [pg](https://node-postgres.com/apis/pool)  
 * Setup [postgres correctly](https://github.com/Techtonica/curriculum/blob/main/databases/installing-postgresql.md)
 
-
+ -->

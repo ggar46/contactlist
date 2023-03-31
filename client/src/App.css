@@ -102,4 +102,6 @@ button.btn.btn-primary {
 
 #submitButton{
   margin-top: 20px;
+  background-color: #ff8ba7;
+  color: #33272a;
 }

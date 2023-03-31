@@ -161,7 +161,7 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                 />
             </Form.Group>
             <Button id='submitButton' type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            {student.id ? <Button id="editButtonRight" type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             
         </Form>
     );

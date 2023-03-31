@@ -51,7 +51,8 @@ input[type=text] {
   width: 100%;
   font-size: 15px;
   border-radius: 2px;
-  border: 3px solid #98d0f1
+  border: 2px solid #33272a;
+  background-color: #fdd1d1;
 }
 
 button.btn.btn-primary {
@@ -74,6 +75,8 @@ button.btn.btn-primary {
   margin-top: 1em;
 }
 
+
+
 .card-body {
   margin-left: 2em;
   margin-right: 2em;
@@ -83,6 +86,13 @@ button.btn.btn-primary {
  text-align: left; 
  margin-left: 30%;
  margin-top: 5%;
+
+}
+
+#modalInfo{
+  background-color: #c3f0ca;
+  padding: 1px;
+  margin-top: 10px;
 }
 
 #modalButton{
@@ -104,4 +114,15 @@ button.btn.btn-primary {
   margin-top: 20px;
   background-color: #ff8ba7;
   color: #33272a;
+  font-weight: 900;
+}
+
+#modalButton{
+  background-color: #ffc6c7;
+}
+
+#editButtonRight{
+  margin-top: 20px;
+  font-weight: 900;
+  margin-left: 20px;
 }

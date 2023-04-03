@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+
+
 .App {
   min-height: 100vh;
   background-color: rgb(238, 232, 232);
@@ -25,6 +28,10 @@ a.navbar-brand {
   flex: 1
 }
 
+.form-students{
+  margin-top: 80px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -44,7 +51,8 @@ input[type=text] {
   width: 100%;
   font-size: 15px;
   border-radius: 2px;
-  border: 3px solid #98d0f1
+  border: 2px solid #33272a;
+  background-color: #fdd1d1;
 }
 
 button.btn.btn-primary {
@@ -67,7 +75,54 @@ button.btn.btn-primary {
   margin-top: 1em;
 }
 
+
+
 .card-body {
   margin-left: 2em;
   margin-right: 2em;
+}
+
+.modalInfo{
+ text-align: left; 
+ margin-left: 10%;
+ margin-top: 5%;
+
+}
+
+#modalInfo{
+  background-color: #c3f0ca;
+  padding: 1px;
+  margin-top: 10px;
+}
+
+#modalButton{
+  margin-top: 20px;
+}
+
+#titlePage {
+  font-family: 'Grandstander', cursive;
+  font-size: xx-large;
+  margin-bottom: 30px;
+}
+
+#cardTitle{
+  font-family: 'Grandstander', cursive;
+  font-size: x-large;
+}
+
+#submitButton{
+  margin-top: 20px;
+  background-color: #ff8ba7;
+  color: #33272a;
+  font-weight: 900;
+}
+
+#modalButton{
+  background-color: #ffc6c7;
+}
+
+#editButtonRight{
+  margin-top: 20px;
+  font-weight: 900;
+  margin-left: 20px;
 }

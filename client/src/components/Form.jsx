@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button, Form } from "react-bootstrap"
 
 const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
@@ -7,7 +7,9 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
     const [student, setStudent] = useState(editingStudent || {
         firstname: "",
         lastname: "",
-        is_current: false
+        email: "",
+        phonenumber: "",
+        notes: ""
     });
 
     //create functions that handle the event of the user typing into the form
@@ -22,15 +24,28 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
         setStudent((student) => ({ ...student, lastname }));
     };
 
-    const handleCheckChange = (event) => {
-        const is_current = event.target.checked;
-        //console.log(iscurrent);
-        setStudent((student) => ({ ...student, is_current }));
-    };
+
+    const handleEmail  = (event)  => {
+        const email = event.target.value;
+        setStudent((student)  => ({...student, email}));
+    }
+
+    const handlePhone  = (event)  => {
+        const phonenumber = event.target.value;
+        setStudent((student)  => ({...student, phonenumber}));
+    }
 
     const clearForm = () => {
-        setStudent({ firstname: "", lastname: "", is_current: false })
+        setStudent({ firstname: "", lastname: "", email:"", phonenumber:"", notes:""  })
     }
+
+    const handleNotes = (event) => {
+        const notes = event.target.value;
+        setStudent((student)  => ({...student, notes}));
+    }
+
+    
+
 
     //A function to handle the post request
     const postStudent = (newStudent) => {
@@ -92,6 +107,8 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                     onChange={handleNameChange}
                 />
             </Form.Group>
+
+
             <Form.Group>
                 <Form.Label>Last Name</Form.Label>
                 <input
@@ -103,17 +120,49 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
                     onChange={handleLastnameChange}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={student.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
+
+
             <Form.Group>
-            <Button type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
-            {student.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+                <Form.Label>Email</Form.Label>
+                <input
+                    type="text"
+                    id="add-email"
+                    placeholder="Email"
+                    required
+                    value={student.email}
+                    onChange={handleEmail}
+                />
             </Form.Group>
+
+
+
+            <Form.Group>
+                <Form.Label>Phone Number</Form.Label>
+                <input
+                    type="text"
+                    id="add-phone-number"
+                    placeholder="Phone Number"
+                    required
+                    value={student.phonenumber}
+                    onChange={handlePhone}
+                />
+            </Form.Group>
+
+
+            <Form.Group>
+                <Form.Label>Notes</Form.Label>
+                <input
+                    type="text"
+                    id="add-notes"
+                    placeholder="Notes"
+                    required
+                    value={student.notes}
+                    onChange={handleNotes}
+                />
+            </Form.Group>
+            <Button id='submitButton' type="submit" variant="outline-success">{student.id ? "Edit Student" : "Add Student"}</Button>
+            {student.id ? <Button id="editButtonRight" type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            
         </Form>
     );
 };
